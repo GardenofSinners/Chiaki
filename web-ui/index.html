@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Twitch Bot</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+
+	<script src=" http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+	<script>
+      var socket = io('http://127.0.0.1:3000/');
+      socket.on('sendPrivateKey', function(newPrivateKey) {
+        console.log("Received private key "+newPrivateKey);
+      });
+      socket.on('sendLogs', function(logs) {
+        console.log("LOGS Received \n"+logs);
+      });
+	</script>
+
+</body>
+</html>
